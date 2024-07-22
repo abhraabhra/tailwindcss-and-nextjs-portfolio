@@ -3,30 +3,44 @@ import Image from "next/image"
 import Link from "next/link"
 import SlideUp from "./slide-up"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
+// import {Tooltip} from "@nextui-org/tooltip";
+
 
 const projects = [
   {
-    name: "Thankful Thoughts",
-    description:
-      "ThankfulThoughts is a web app that generates an appreciative sentence of something or someone you are thankful for.",
-    image: "/thankfulthoughts.png",
-    github: "https://github.com/hqasmei/thankful-thoughts",
-    link: "https://thankfulthoughts.io/",
+    name: "Resumes Digital",
+    description: "A platform specifically designed to assist MBA students in crafting impactful resumes that effectively showcase their skills and experience to potential employers.",
+    image: "/resumes-digital.png",
+    github: "",
+    link: "https://resumes.digital",
+    available: true,
   },
   {
-    name: "PlatoIO",
-    description: "PlatoIO is a to do list app that built using the PERN stack.",
-    image: "/platoio.png",
-    github: "https://github.com/hqasmei/platoio",
-    link: "https://platoio.com/register",
-  },
-  {
-    name: "Kator Family Photos",
+    name: "CareerCarve.com",
     description:
       "Kator Family Photos is a photos and video digitization service in the LA area.",
-    image: "/familyphotos.png",
-    github: "https://github.com/hqasmei/katorfamilyphotos",
-    link: "https://katorfamilyphotos.com/",
+    image: "/careercarve-com.png",
+    github: "",
+    link: "https://careercarve.com/",
+    available: true,
+  },
+  {
+    name: "Flow Builder",
+    description:
+      "A flow builder built using React-Flow, to ease and streamline the flow-creation process for any project.",
+    image: "/flow-builder.png",
+    github: "https://github.com/abhraabhra/chatbot-flow-builder",
+    link: "https://chatbot-flow-builder-5000.netlify.app/",
+    available: true,
+  },
+  {
+    name: "Doink.Watch",
+    description:
+      "A Third Party Twitch App but Better and smoother with optimised animations.",
+    image: "/doink-watch.png",
+    github: "https://github.com/abhraabhra/doink.watch-twitch",
+    link: "Coming soon!",
+    available: false,
   },
 ]
 
@@ -45,7 +59,7 @@ const ProjectsSection = () => {
               <SlideUp offset="-300px 0px -300px 0px">
                 <div className="flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
                   <div className=" md:w-1/2">
-                    <Link href={project.link}>
+                    <Link href={project.available ? project.link : ""} target="_blank">
                       <Image
                         src={project.image}
                         alt=""
@@ -61,13 +75,15 @@ const ProjectsSection = () => {
                       {project.description}
                     </p>
                     <div className="flex flex-row align-bottom space-x-4">
-                      <Link href={project.github} target="_blank">
-                        <BsGithub
-                          size={30}
-                          className="hover:-translate-y-1 transition-transform cursor-pointer"
-                        />
-                      </Link>
-                      <Link href={project.link} target="_blank">
+                      {!!project.github &&
+                        <Link href={project.github} target="_blank">
+                          <BsGithub
+                            size={30}
+                            className="hover:-translate-y-1 transition-transform cursor-pointer"
+                          />
+                        </Link> 
+                      }
+                      <Link href={project.available ? project.link : ""} target="_blank">
                         <BsArrowUpRightSquare
                           size={30}
                           className="hover:-translate-y-1 transition-transform cursor-pointer"
@@ -80,7 +96,7 @@ const ProjectsSection = () => {
             </div>
           )
         })}
-        
+
       </div>
     </section>
   )

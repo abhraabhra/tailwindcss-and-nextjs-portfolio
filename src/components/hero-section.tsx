@@ -1,8 +1,10 @@
 "use client"; // this is a client component
 import React from "react";
 import Image from "next/image";
-import { Link } from "react-scroll/modules";
+import { Link as ScrollLink } from "react-scroll/modules";
+import Link from "next/link"
 import { HiArrowDown } from "react-icons/hi";
+import { BsArrowUpRight } from "react-icons/bs";
 
 const HeroSection = () => {
   return (
@@ -29,21 +31,30 @@ const HeroSection = () => {
             based in Bengaluru, India. Working towards creating software that
             makes life easier and more meaningful.
           </p>
-          <Link
-            to="projects"
-            className="text-neutral-100 font-semibold px-6 py-3 bg-teal-600 rounded shadow hover:bg-teal-700"
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={500}
-          >
-            Projects
-          </Link>
+          <div className="flex gap-x-5">
+            <ScrollLink
+              to="projects"
+              className="text-neutral-100 font-bold px-6 py-3 bg-teal-600 rounded shadow hover:bg-teal-700 hover:-translate-y-1 transition-transform cursor-pointer"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+            >
+              Projects
+            </ScrollLink>
+            <Link
+              href={"https://drive.google.com/file/d/1r4wmniZVIL7UTzqBXO4lzrMCrzmyD1RM/view?usp=sharing"}
+              className="flex items-center justify-center gap-x-2 text-neutral-100 font-bold px-6 py-3 border border-white rounded-md shadow hover:border-2 hover:-translate-y-1 transition-transform cursor-pointer"
+              target="_blank"
+            >
+              Resume <BsArrowUpRight size={15}/>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="flex flex-row items-center text-center justify-center ">
-        <Link
+        <ScrollLink
           to="about"
           activeClass="active"
           spy={true}
@@ -52,7 +63,7 @@ const HeroSection = () => {
           duration={500}
         >
           <HiArrowDown size={35} className="animate-bounce" />
-        </Link>
+        </ScrollLink>
       </div>
     </section>
   );

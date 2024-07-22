@@ -2,17 +2,19 @@ import React from "react"
 import Image from "next/image"
 
 const skills = [
-  { skill: "HTML" },
-  { skill: "CSS" },
-  { skill: "JavaScript" },
-  { skill: "TypeScript" },
-  { skill: "Python" },
   { skill: "React" },
   { skill: "Next.js" },
+  { skill: "JavaScript" },
+  { skill: "TypeScript" },
+  { skill: "HTML" },
+  { skill: "CSS" },
   { skill: "Tailwind CSS" },
+  { skill: "Node.js" },
+  { skill: "Express.js" },
+  { skill: "mySQL" },
+  { skill: "MongoDB" },
   { skill: "Git" },
   { skill: "GitHub" },
-  { skill: "Jupyter Notebooks" },
 ]
 
 const AboutSection = () => {
@@ -30,22 +32,22 @@ const AboutSection = () => {
               Get to know me!
             </h1>
             <p>
-              Hi, my name is Hosna and I am a{" "}
+              Hi, my name is Abhra and I am a{" "}
               <span className="font-bold">{"highly ambitious"}</span>,
               <span className="font-bold">{" self-motivated"}</span>, and
               <span className="font-bold">{" driven"}</span> software engineer
-              based in Los Angeles, CA.
+              based in Bengaluru, India.
             </p>
             <br />
             <p>
-              I graduated from California State University, Northridge in 2019
-              with a BS in Computer Engineering and have been working in the
+              I graduated from Kalinga Institute of Industrial Technology, Bhubaneswar in 2023
+              with a B.Tech. Degree in Information Technology, under the school of CSE and have been working in the
               field ever since.
             </p>
             <br />
             <p>
               I have a wide range of hobbies and passions that keep me busy.
-              From reading, playing sports, traveling, to making YouTube videos,
+              From reading, playing sports and video games to traveling,
               I am always seeking new experiences and love to keep myself
               engaged and learning new things.
             </p>
