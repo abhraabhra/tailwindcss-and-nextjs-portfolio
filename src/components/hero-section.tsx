@@ -12,11 +12,11 @@ const HeroSection = () => {
       <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left">
         <div className="md:mt-2 md:w-1/2">
           <Image
-            src="/abhra-headshot.png"
+            src="/headshot-animated-png.png"
             alt=""
             width={325}
             height={325}
-            className="rounded-full shadow-2xl"
+            className="rounded-full"
           />
         </div>
         <div className="md:mt-2 md:w-3/5">
@@ -45,10 +45,10 @@ const HeroSection = () => {
             </ScrollLink>
             <Link
               href={"https://drive.google.com/file/d/1r4wmniZVIL7UTzqBXO4lzrMCrzmyD1RM/view?usp=sharing"}
-              className="flex items-center justify-center gap-x-2 text-neutral-100 font-bold px-6 py-3 border border-white rounded-md shadow hover:border-2 hover:-translate-y-1 transition-transform cursor-pointer"
+              className="flex items-center justify-center gap-x-2 text-neutral-100 font-bold px-6 py-3 border border-white rounded-md shadow hover:-translate-y-1 transition-transform cursor-pointer"
               target="_blank"
             >
-              Resume <BsArrowUpRight size={15}/>
+              Resume <BsArrowUpRight size={15} />
             </Link>
           </div>
         </div>
